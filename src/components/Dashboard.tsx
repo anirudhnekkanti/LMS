@@ -28,7 +28,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Top Navigation */}
-      <nav className="bg-gray-800 border-b border-gray-700">
+      <nav className="bg-gray-800 border-b border-gray-700 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center space-x-8">
@@ -50,6 +50,15 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
                     Leaderboard
                   </a>
                 </div>
+              </div>
+              
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <button className="text-gray-300 hover:text-white p-2">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
               </div>
             </div>
             
@@ -84,7 +93,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
 
       <div className="flex">
         {/* Left Sidebar */}
-        <div className="w-64 bg-gray-800 min-h-screen border-r border-gray-700">
+        <div className="hidden lg:block w-64 bg-gray-800 min-h-screen border-r border-gray-700">
           <div className="p-4">
             <h2 className="text-lg font-semibold text-white mb-4">Navigation</h2>
             <nav className="space-y-2">
@@ -105,10 +114,10 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-8">
+        <div className="flex-1 p-4 lg:p-8">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
-              <h1 className="text-3xl font-bold text-white mb-2">Your Custom Learning Plan</h1>
+              <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2">Your Custom Learning Plan</h1>
               <p className="text-gray-400">
                 Based on your experience and goals, here's your personalized learning journey.
               </p>
@@ -119,9 +128,9 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
                 <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                   <button
                     onClick={() => toggleExpanded(index)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-700 transition-colors"
+                    className="w-full px-4 lg:px-6 py-4 text-left flex items-center justify-between hover:bg-gray-700 transition-colors"
                   >
-                    <h3 className="text-lg font-semibold text-white">{week.title}</h3>
+                    <h3 className="text-base lg:text-lg font-semibold text-white pr-4">{week.title}</h3>
                     {expandedItems.includes(index) ? (
                       <ChevronDown className="text-gray-400" size={20} />
                     ) : (
@@ -130,12 +139,12 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
                   </button>
                   
                   {expandedItems.includes(index) && (
-                    <div className="px-6 pb-4 border-t border-gray-700">
+                    <div className="px-4 lg:px-6 pb-4 border-t border-gray-700">
                       <ul className="mt-4 space-y-2">
                         {week.tasks.map((task, taskIndex) => (
                           <li key={taskIndex} className="flex items-start space-x-3">
                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300">{task}</span>
+                            <span className="text-gray-300 text-sm lg:text-base">{task}</span>
                           </li>
                         ))}
                       </ul>
