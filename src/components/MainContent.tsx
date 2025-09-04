@@ -14,15 +14,15 @@ const MainContent: React.FC<MainContentProps> = ({ activeSection }) => {
       case 'community':
         return (
           <div className="content-placeholder">
-            <h2>Outskill Community</h2>
+            <h2>LMS Community</h2>
             <p>Community features and discussions will be displayed here.</p>
           </div>
         );
       case 'ai-mastermind':
         return (
           <div className="content-placeholder">
-            <h2>Generative AI Mastermind</h2>
-            <p>AI mastermind content and resources will be displayed here.</p>
+            <h2>Generative AI </h2>
+            <p>AI content and resources will be displayed here.</p>
           </div>
         );
       default:

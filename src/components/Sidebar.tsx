@@ -1,15 +1,15 @@
 import React from 'react';
-import { 
-  Grid3X3, 
-  Plus, 
-  BookOpen, 
-  Users, 
-  MessageCircle, 
-  Video, 
-  FileText, 
-  HelpCircle, 
-  Star, 
-  Heart, 
+import {
+  Grid3X3,
+  Plus,
+  BookOpen,
+  Users,
+  MessageCircle,
+  Video,
+  FileText,
+  HelpCircle,
+  Star,
+  Heart,
   Headphones,
   ChevronRight
 } from 'lucide-react';
@@ -22,31 +22,29 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => {
   const menuItems = [
-    { id: 'community', label: 'Outskill Community', icon: Grid3X3, hasSubmenu: true },
-    { id: 'ai-mastermind', label: 'Generative AI Mastermind', icon: BookOpen, hasSubmenu: false },
-    { id: 'ai-mastermind-2', label: 'Generative AI Mastermin...', icon: BookOpen, hasSubmenu: false },
-    { id: 'tools', label: 'Tools', icon: Grid3X3, hasSubmenu: false, active: true },
+    { id: 'community', label: 'Home', icon: Grid3X3, hasSubmenu: true, active: true },
+    { id: 'ai-mastermind', label: 'Generative AI', icon: BookOpen, hasSubmenu: false },
+    // { id: 'ai-mastermind-2', label: 'Generative AI', icon: BookOpen, hasSubmenu: false },
+    // { id: 'tools', label: 'Tools', icon: Grid3X3, hasSubmenu: false, active: true },
   ];
 
-  const masterminds = [
-    { id: 'july', label: 'July Mastermind', hasSubmenu: true },
-    { id: 'cs7-chat', label: 'CS7 | Group Chat', badge: '99+', icon: MessageCircle },
-  ];
+  // const masterminds = [
+  //   { id: 'july', label: 'July Mastermind', hasSubmenu: true },
+  //   { id: 'cs7-chat', label: 'CS7 | Group Chat', badge: '99+', icon: MessageCircle },
+  // ];
 
-  const accelerator = [
-    { id: 'c4-accelerator', label: 'C4 | AI Accelerator', hasSubmenu: true },
-    { id: 'welcome-steps', label: 'Welcome & Next Steps', icon: ChevronRight },
-  ];
+  // const accelerator = [
+  //   { id: 'c4-accelerator', label: 'C4 | AI Accelerator', hasSubmenu: true },
+  //   { id: 'welcome-steps', label: 'Welcome & Next Steps', icon: ChevronRight },
+  // ];
 
   const sprint = [
-    { id: 'c3-sprint', label: 'C3 | 14 - Day AI Sprint', hasSubmenu: true },
+    { id: 'c3-sprint', label: '14 - Day Sprint', hasSubmenu: true },
     { id: 'welcome-steps-2', label: 'Welcome & Next Steps', icon: ChevronRight },
-    { id: 'live-sessions', label: 'Live Sessions', icon: Video },
+    { id: 'live-sessions', label: 'Sessions', icon: Video },
     { id: 'resources', label: 'Resources & Recordings', icon: FileText },
     { id: 'introductions', label: 'Introductions', badge: '51', icon: Users },
-    { id: 'ask-doubts', label: 'Ask-Doubts', icon: HelpCircle },
-    { id: 'reflections', label: 'Reflections', icon: Star },
-    { id: 'gratitude', label: 'Gratitude', badge: '99+', icon: Heart },
+
     { id: 'tech-support', label: 'Tech-Support', badge: '99+', icon: Headphones },
   ];
 
@@ -55,7 +53,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
       <div className="sidebar-header">
         <div className="logo">
           <Grid3X3 size={24} />
-          <span>Outskill</span>
+          <span>LMS</span>
         </div>
         <Plus className="add-icon" size={20} />
       </div>
@@ -74,7 +72,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
           ))}
         </nav>
 
-        <div className="sidebar-section">
+        {/* <div className="sidebar-section">
           <div className="section-header">July Mastermind</div>
           {masterminds.map((item) => (
             <div key={item.id} className="nav-item">
@@ -93,10 +91,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
               <span>{item.label}</span>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="sidebar-section">
-          <div className="section-header">C3 | 14 - Day AI Sprint</div>
+          <div className="section-header">14 - Day Sprint</div>
           {sprint.map((item) => (
             <div key={item.id} className="nav-item">
               {item.icon && <item.icon size={16} />}

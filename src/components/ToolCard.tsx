@@ -20,7 +20,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
         <div className="tool-header">
           <div className="outskill-logo">
             <Grid3X3 size={16} />
-            <span>Outskill</span>
+            <span>LMS</span>
           </div>
           <span className="separator">×</span>
           <div className="tool-info">

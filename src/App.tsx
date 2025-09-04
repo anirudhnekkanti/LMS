@@ -5,7 +5,7 @@ import MainContent from './components/MainContent';
 import './App.css';
 
 function App() {
-  const [activeSection, setActiveSection] = useState('tools');
+  const [activeSection, setActiveSection] = useState('community');
 
   return (
     <div className="app">
